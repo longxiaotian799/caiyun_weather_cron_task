@@ -252,7 +252,7 @@ function realtimeWeather() {
     const now = dt.getHours() + 1;
     dt.setHours(dt.getHours() + 1);
     hourlySkycon +=
-      `${now}-${dt.getHours() + 1}时 ${mapSkycon(skycon.value)[0]} ${realtime.apparent_temperature} ℃` +
+      `${now}-${dt.getHours() + 1}时 ${mapSkycon(skycon.value)[0]} ${（data.realtime+i）.apparent_temperature} ℃` +
       (i == 23 ? "" : "\n");
   }
 
