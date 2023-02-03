@@ -1,7 +1,8 @@
 /**
 彩云天气 v0.1 alpha
 @author: Peng-YM
-我只是简单修改播报可以未来24小时，在这个js脚本搜索“未来”两个字就知道了，原版只能播报3个小时
+v0.2我只是简单修改播报可以未来24小时，在这个js脚本搜索“未来”两个字就知道了，原版只能播报3个小时
+v0.3在未来小时播报后面加上了温度
 更新地址：https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/caiyun.js
  *
 功能：
@@ -251,7 +252,7 @@ function realtimeWeather() {
     const now = dt.getHours() + 1;
     dt.setHours(dt.getHours() + 1);
     hourlySkycon +=
-      `${now}-${dt.getHours() + 1}时 ${mapSkycon(skycon.value)[0]}` +
+      `${now}-${dt.getHours() + 1}时 ${mapSkycon(skycon.value)[0]} + ${realtime.apparent_temperature} ℃` +
       (i == 23 ? "" : "\n");
   }
 
