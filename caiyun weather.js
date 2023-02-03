@@ -244,15 +244,15 @@ function realtimeWeather() {
 
   const hourly = data.hourly;
 
-  let hourlySkycon = "[未来3小时]\n";
-  for (let i = 0; i < 3; i++) {
+  let hourlySkycon = "[未来24小时]\n";
+  for (let i = 0; i < 24; i++) {
     const skycon = hourly.skycon[i];
     const dt = new Date(skycon.datetime);
     const now = dt.getHours() + 1;
     dt.setHours(dt.getHours() + 1);
     hourlySkycon +=
       `${now}-${dt.getHours() + 1}时 ${mapSkycon(skycon.value)[0]}` +
-      (i == 2 ? "" : "\n");
+      (i == 23 ? "" : "\n");
   }
 
   $.notify(
